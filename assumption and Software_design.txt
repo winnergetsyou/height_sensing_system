@@ -1,0 +1,52 @@
+ASSUMPTIONS:[height sensing system]
+
+
+1. SPACE CARFT LANDING ON A EVEN SURFACE. 
+ASSUMING THAT, AVAERAGE VALUE OF THREE SENSOR READING IS TAKEN AS accurate HEIGHT OF SPACECRAFT.
+
+2. Here, Height is the height of the space-craft [ignoring the Space-craft legs]
+
+So, landing will be assumed at 40cm height of lunar craft. (space_craft legs)
+
+
+
+
+_____________________________________________________________________________________________________________________________________________
+Program - > PYTHON 3 HAS BEEN CHOSEN
+
+COMPARED TO LOW LEVEL LANGUAGES..
+ 1.Easiness Reusability + adding features and 2. code can be easily maintained and it is readable 
+
+
+
+SOFTWARE DESIGN :
+
+SEPERATE CLASS FOR CONVERTING RAW LASER DATA TO HEIGHT -- > 
+THIS CLASS BE USED FOR OTHER SENSORs AS WELL IN THE SYSTEM.. (with little modification)
+Maintenance:
+Easy to add features and modification in future 
+
+
+see --- > software_design picture for more information
+------------------------------------------------------------
+
+THREE PARTS:
+CONSIDERATIONs
+
+part
+1. UDP AND TCP SOCKET PROGRAMMING
+---------- RECEIVES THE MESSAGE [UDP MESSAGE - BIG ENDIAN]
+
+
+part
+2. SENSOR RAW VALUES T0 HEIGHT 
+
+   All data is sent in network byte order (big-endian).  The fields are
+   listed in the following sections.
+
+part
+3. DATA FRAMING [STRUCT] |[TYPE](2BYTE)[TIME](4 BYTE)[PAYLOAD](0 TO 4096)
+
+
+part
+4. EACH TIME IT RECEIVES SENSOR VALUE, PUBLISHES TO 12777 PORT

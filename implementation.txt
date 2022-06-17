@@ -1,0 +1,21 @@
+
+Software_requirements_
+1.install PYTHON 3 
+2.Tested on Linux ubuntu [working_good]
+Change this inside all the program (#!usr/bin/python3), just incase, if your system has differnt python confinguration setup
+
+unzip the TAR file
+
+1. Open the folder 
+Note: Make sure to include all the files server.py height.py in the same folder location.(BY DEFAULT, IT WILL BE IN THE SAME LOCATION)
+
+2. Start the program by using ./server.py
+[start hss]
+
+3. the program will receive udp message which is coming to 12778.
+4. height messages in cms will be sent to all sub_systems
+
+5.Start the simulator ./simulator
+
+
+./MOONWIRE MESSAGE BUS PACKAING PROTOCOLS HAVE BEEN FOLLOWED

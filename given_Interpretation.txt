@@ -1,0 +1,115 @@
+# GIVEN :
+
+## DOCUMENTS RECEIVED :
+	1. BUILD -- > ./SIMULATOR 
+	2. DOCS -- >  1.instruction pdf and moonwire_software
+***
+
+> ## instruction pdf
+
+main requirements of HSS- HEIGHT SENSING SUB-SYSTEM
+
+**Canadian-led soft landing on the Moon**- ***the height sensing subsystem (HSS) onboard***
+
+1. subsystem will be engaged during the last 50 meters of the descent towards the
+Lunar surface
+
+2. needed to determine the current spacecraft altitiude.
+
+3. signal to other subsystems when we have landed.
+
+3. spacecraft has a laser altimeter sensor that can be used to compute the height of the spacecraft.
+
+4. HSS should read the raw altimeter measurements and calculate the height.
+
+
+
+> ## TASK DESCRIPTION :
+
+1. Use the provided spacecraft simulator to create the height sensing subsystem.
+
+2. For each LASER_ALTIMETER message recieved you should send a HEIGHT message containing the current spacecraft height in centimeters. done
+
+3. Once you detect a landing event, send an ENGINE_CUTOFF message to indicate to all other subsystems that we have touched down.
+
+4. Once you detect a landing event, send an ENGINE_CUTOFF message to indicate to all other subsystems that we have touched down.
+
+
+The HSS should be bound to port 12778
+
+The message bus router is bound to port 12777
+
+For any given message type, all messages are sent in order.
+
+Each data field in a message is byte-aligned.
+
+Each message is broadcast to all subsystems regardless of its type.
+
+
+![Description_of_the_system](LANDING.jpg)
+
+
+SYSTEM DETAILS :
+
+subsystem is executed in a *distributed context* where each communicates with the others
+through the use of a message bus called MoonWire
+
+Subsystems send data
+by sending specially formatted UDP packets onto the bus.
+
+receive data by
+listening for specially formatted UDP packets on this bus from other subsystems
+
+provided MoonWire specification to determine how to read and
+send data from the message bus.
+
+
+
+
+--------------------------------------------------------------------------------------------
+converting raw laser data into normal_one
+
+laser altimeter :
+
+The laser altimeter is *mounted vertically* to the underside of the lander
+spacecraft
+
+the laser altimeter is approximately *40 cm* above the ground. so the ACTUAL height(INCLUDING LEGS) from the moon surface is [40cm + reading from the laser altimeter]
+BUT ASSUME HEIGHT = HEIGHT OF SPACE CRAFT
+SO==> LANDING CAN BE DETECTED WHEN HEIGHT == 40 CM 
+
+The altimeter instrument has 3 sensing heads on it and will therefore
+produces 3 measurements each time it is sampled.
+
+
+The laser altimiter has a max range of 1000 meters and will produces readings from 0 to
+65535 (UINT16_MAX).
+
+
+16-bit
+integers and must be scaled to determine the true height in meters. The laser
+altimiter has a max range of 1000 meters and will produces readings from 0 to
+65535 (UINT16_MAX).
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
+
+
+To implement the height sensing susbsytem, you may use any suitable language/
+runtime. You should not use any external libraries in your implementation
+(POSIX APIs are allowed). The flight computer runs Linux on an x86_64
+processor and the subsystem must run on this target. You’re expected to state
+all assumptions and justify design decisions. Examples include your choices of
+language, program structure, and algorithms. Also include any documentation
+required to setup your software.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

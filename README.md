@@ -15,12 +15,12 @@ UDP_Socket_program-->client/server[PYTHON] -- [PACKING-UNPACKING]
 ## For Understanding the program part 
   - Refer GivenInterpretation.text in the repository 
 
-!(REFER SOFTWARE_DESIGN.png)[software_design.png]
+![REFER SOFTWARE_DESIGN.png](software_design.png)
 
 ##  Software DESIGN :
     Refer assumptions&software_design.txt in the repository
     
     
     
-!(REFER SOFTWARE_DESIGN.png)[HEIGHT_SENSING_SUBSYSTEM_SOFTWARE.png]
+![REFER SOFTWARE_DESIGN.png](HEIGHT_SENSING_SUBSYSTEM_SOFTWARE.png)
     

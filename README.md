@@ -1,5 +1,6 @@
 # HEIGHT SENSING SYSTEM
-## CAN BE USED MODIFIED AND USED WITH ANY MICRO-CONTROLLERS AND SENSORS
+## THE PROGRAM CAN BE USED WITH ANY MICRO-CONTROLLERS such as Arduino, Raspberry pi
+## THE PROGRAM PERFORMS OPERATIONS WITH ANY SENSOR RAW VALUES WITH MODIFICATIONS
 
 UDP_Socket_program-->client/server[PYTHON] -- [PACKING-UNPACKING]
 
@@ -12,7 +13,7 @@ UDP_Socket_program-->client/server[PYTHON] -- [PACKING-UNPACKING]
 ## HEIGHT SENSING SYSTEM 
 ./ test_simulation file will be required to perform this. CONTACT ME for details.
 
-## - REFERENCES
+#- REFERENCES
 
 ## FOR Implentation 
   - Refer the document implementation.txt in the repository 
